@@ -1,316 +1,297 @@
-/* Reset */
-
-*,
-*::before,
-*::after {
-    box-sizing: border-box;
-}
-
-body,
-h1,
-p {
-    margin: 0;
-}
-
-
-/* Fonts */
-
-@font-face {
-    font-family: "Karla";
-    src: url("assets/fonts/static/Karla-Regular.ttf") format("truetype");
-    font-weight: 400;
-    font-style: normal;
-}
-
-@font-face {
-    font-family: "Karla";
-    src: url("assets/fonts/static/Karla-Bold.ttf") format("truetype");
-    font-weight: 700;
-    font-style: normal;
-}
-
-
-/* Root */
-
-:root {
-    /* Typography */
-    --fs-s: 16px;
-    --fs-m: 18px;
-    --fs-h: 32px;
-    /* Radius / spacing */
-    --radius: 8px;
-    --gap-1: 1.25rem;
-    --gap-2: 2rem;
-    --field-h: 3.5rem;
-    --textarea-h: 6.25rem;
-    --pad-y: 1.063rem;
-    /* Colors (from your palette) */
-    --green-200: hsl(148, 38%, 91%);
-    --green-600: hsl(169, 82%, 27%);
-    --red: hsl(0, 66%, 54%);
-    --white: hsl(0, 0%, 100%);
-    --grey-500: hsl(186, 15%, 59%);
-    --grey-900: hsl(187, 24%, 22%);
-    /* Controls */
-    --control-size: 24px;
-    --control-offset-x: 12px;
-}
-
-
-/* Base */
-
-body {
-    font-family: "Karla", monospace;
-    font-size: var(--fs-s);
-    line-height: 1.5;
-    color: var(--grey-900);
-    background: var(--green-200);
-}
-
-h1 {
-    font-size: var(--fs-h);
-    letter-spacing: -1px;
-    font-weight: 700;
-}
-
-label,
-span {
-    font-weight: 400;
-}
-
-
-/* Center page */
-
-main {
-    min-height: 100vh;
-    display: grid;
-    place-items: center;
-    padding: 1rem;
-}
-
-
-/* Card */
-
-.card {
-    width: min(50rem, 100%);
-    padding: 2.5rem;
-    border-radius: var(--radius);
-    background: var(--white);
-    margin-inline: auto;
-}
-
-
-/* Form */
-
-form {
-    display: flex;
-    flex-direction: column;
-    gap: var(--gap-2);
-}
-
-
-/* Shared controls */
-
-input,
-textarea,
-button {
-    width: 100%;
-    border-radius: var(--radius);
-    font: inherit;
-}
-
-
-/* Controls look */
-
-input[type="text"],
-input[type="email"],
-input[type="mail"],
-textarea {
-    margin-top: var(--pad-y);
-    border: 1px solid var(--grey-500);
-    padding: 0 1rem;
-    color: var(--grey-900);
-    background: var(--white);
-}
-
-input[type="text"],
-input[type="email"],
-input[type="mail"] {
-    height: var(--field-h);
-}
-
-textarea {
-    height: var(--textarea-h);
-    padding: 1rem;
-    resize: vertical;
-}
-
-
-/* Focus */
-
-input:focus,
-textarea:focus,
-button:focus {
-    outline: 2px solid var(--green-600);
-    outline-offset: 2px;
-}
-
-
-/* Rows */
-
-.grid-2 {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--gap-1);
-}
-
-
-/* Query type */
-
-.queryType {
-    display: grid;
-}
-
-.queryType .options {
-    display: grid;
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-    gap: var(--gap-1);
-}
-
-
-/* Checkbox-in-input field */
-
-.field {
-    position: relative;
-}
-
-
-/* readonly "fake input" */
-
-.field input[readonly] {
-    padding-left: var(--pad-left, 44px);
-    font-size: var(--fs-m);
-    cursor: default;
-}
-
-
-/* checkbox inside */
-
-.field input[type="radio"] {
-    position: absolute;
-    left: var(--check-left, var(--control-offset-x));
-    top: calc(var(--pad-y) + (var(--field-h) / 2));
-    transform: translateY(-50%);
-    width: var(--control-size);
-    height: var(--control-size);
-    accent-color: var(--green-600);
-    margin: 0;
-    /* super utile */
-}
-
-
-/* Optional hover state (nice UI) */
-
-.field:hover input[readonly] {
-    border-color: var(--green-600);
-}
-
-
-/* Consent */
-
-.consent {
-    display: flex;
-    gap: 0.75rem;
-    align-items: center;
-}
-
-.consent input[type="checkbox"] {
-    width: 24px;
-    height: 24px;
-    margin: 0;
-    accent-color: var(--green-600);
-}
-
-
-/* Button */
-
-button {
-    height: var(--field-h);
-    border: none;
-    background: var(--green-600);
-    color: var(--white);
-    font-weight: 700;
-    cursor: pointer;
-}
-
-button:hover {
-    filter: brightness(0.95);
-}
-
-
-/* Error helpers (si tu ajoutes class="is-error") */
-
-.is-error input,
-.is-error textarea {
-    border-color: var(--red);
-}
-
-.is-error .error-text {
-    color: var(--red);
-}
-
-
-/* =========================
+    /* Reset */
+    
+    *,
+    *::before,
+    *::after {
+        box-sizing: border-box;
+    }
+    
+    body,
+    h1,
+    p {
+        margin: 0;
+    }
+    /* Fonts */
+    
+    @font-face {
+        font-family: "Karla";
+        src: url("assets/fonts/static/Karla-Regular.ttf") format("truetype");
+        font-weight: 400;
+        font-style: normal;
+    }
+    
+    @font-face {
+        font-family: "Karla";
+        src: url("assets/fonts/static/Karla-Bold.ttf") format("truetype");
+        font-weight: 700;
+        font-style: normal;
+    }
+    /* Root */
+    
+     :root {
+        /* Typography */
+        --fs-s: 16px;
+        --fs-m: 18px;
+        --fs-h: 32px;
+        /* Radius / spacing */
+        --radius: 8px;
+        --gap-1: 1.25rem;
+        --gap-2: 2rem;
+        --field-h: 3.5rem;
+        --textarea-h: 6.25rem;
+        --pad-y: 1.063rem;
+        /* Colors (from your palette) */
+        --green-200: hsl(148, 38%, 91%);
+        --green-600: hsl(169, 82%, 27%);
+        --red: hsl(0, 66%, 54%);
+        --white: hsl(0, 0%, 100%);
+        --grey-500: hsl(186, 15%, 59%);
+        --grey-900: hsl(187, 24%, 22%);
+        /* Controls */
+        --control-size: 24px;
+        --control-offset-x: 12px;
+    }
+    /* Base */
+    
+    body {
+        font-family: "Karla", monospace;
+        font-size: var(--fs-s);
+        line-height: 1.5;
+        color: var(--grey-900);
+        background: var(--green-200);
+    }
+    
+    h1 {
+        font-size: var(--fs-h);
+        letter-spacing: -1px;
+        font-weight: 700;
+    }
+    
+    label,
+    span {
+        font-weight: 400;
+    }
+    /* Center page */
+    
+    main {
+        min-height: 100vh;
+        display: grid;
+        place-items: center;
+        padding: 1rem;
+    }
+    /* Card */
+    
+    .card {
+        width: min(50rem, 100%);
+        padding: 2.5rem;
+        border-radius: var(--radius);
+        background: var(--white);
+        margin-inline: auto;
+    }
+    /* Form */
+    
+    form {
+        display: flex;
+        flex-direction: column;
+        gap: var(--gap-2);
+    }
+    /* Shared controls */
+    
+    input,
+    textarea,
+    button {
+        width: 100%;
+        border-radius: var(--radius);
+        font: inherit;
+    }
+    /* Controls look */
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="mail"],
+    textarea {
+        margin-top: var(--pad-y);
+        border: 1px solid var(--grey-500);
+        padding: 0 1rem;
+        color: var(--grey-900);
+        background: var(--white);
+    }
+    
+    input[type="text"],
+    input[type="email"],
+    input[type="mail"] {
+        height: var(--field-h)
+    }
+    
+    textarea {
+        height: var(--textarea-h);
+        padding: 1rem;
+        resize: vertical;
+    }
+    /* Focus */
+    
+    input:focus,
+    textarea:focus,
+    button:focus {
+        outline: 2px solid var(--green-600);
+        outline-offset: 2px;
+    }
+    /* Rows */
+    
+    .grid-2 {
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--gap-1);
+    }
+    /* Query type */
+    
+    .queryType {
+        display: grid;
+    }
+    
+    .queryType .options {
+        margin-top: var(--pad-y);
+        display: grid;
+        grid-template-columns: repeat(2, minmax(0, 1fr));
+        gap: var(--gap-1);
+    }
+    /* Checkbox-in-input field */
+    
+    .field {
+        position: relative;
+        display: flex;
+        align-items: center;
+        height: var(--field-h);
+        padding-left: var(--pad-left);
+        border: 1px solid var(--grey-500);
+        border-radius: var(--radius);
+        cursor: pointer;
+        background: var(--white);
+    }
+    
+    .field-email {
+        --pad-left: 44px;
+        --check-left: 12px;
+    }
+    
+    .field-support {
+        --pad-left: 56px;
+        --check-left: 20px;
+    }
+    /* readonly "fake input" */
+    
+    .field-label {
+        font-size: var(--fs-m);
+        cursor: default;
+    }
+    /* checkbox inside */
+    
+    .field input[type="radio"] {
+        position: absolute;
+        left: var(--check-left);
+        top: 50%;
+        transform: translateY(-50%);
+        width: var(--control-size);
+        height: var(--control-size);
+        accent-color: var(--green-600);
+        margin: 0;
+    }
+    /* Optional hover state (nice UI) */
+    
+    .field:hover .field-label {
+        border-color: var(--green-600);
+    }
+    /* Consent */
+    
+    .consent {
+        display: flex;
+        gap: 0.75rem;
+        align-items: center;
+    }
+    
+    .consent input[type="checkbox"] {
+        width: 24px;
+        height: 24px;
+        margin: 0;
+        accent-color: var(--green-600);
+    }
+    /* Button */
+    
+    button {
+        height: var(--field-h);
+        border: none;
+        background: var(--green-600);
+        color: var(--white);
+        font-weight: 700;
+        cursor: pointer;
+    }
+    
+    button:hover {
+        filter: brightness(0.95);
+    }
+    /* Error helpers (si tu ajoutes class="is-error") */
+    
+    .is-error input,
+    .is-error textarea {
+        border-color: var(--red);
+    }
+    
+    .is-error .error-text {
+        color: var(--red);
+    }
+    /* =========================
    TABLET
    ========================= */
-
-@media (max-width: 48rem) {
-    .card {
-        max-width: 43.125rem;
-        /* largeur Figma */
-        min-height: 50rem;
-        /* hauteur Figma */
-        padding: 2rem;
-        /* un peu plus compact */
+    
+    @media (max-width: 48rem) {
+        .card {
+            max-width: 43.125rem;
+            /* largeur Figma */
+            min-height: 50rem;
+            /* hauteur Figma */
+            padding: 2rem;
+            /* un peu plus compact */
+        }
+        main {
+            padding: 2rem;
+        }
+        form {
+            gap: 1.75rem;
+        }
+        .grid-2 {
+            gap: 1rem;
+        }
+        .queryType .options {
+            gap: 1rem;
+        }
     }
-    main {
-        padding: 2rem;
-    }
-    form {
-        gap: 1.75rem;
-    }
-    .grid-2 {
-        gap: 1rem;
-    }
-    .queryType .options {
-        gap: 1rem;
-    }
-}
-
-
-/* =========================
+    /* =========================
    MOBILE (inclut iPhone 14 Pro Max = 430px)
    ========================= */
-
-@media (max-width: 30rem) {
-    .card {
-        width: 100%;
-        max-width: 21.438rem;
-        /* largeur Figma mobile */
-        min-height: 67.125rem;
-        /* Figma (safe) */
-        padding: 1.5rem;
+    
+    @media (max-width: 30rem) {
+        .card {
+            width: 100%;
+            max-width: 21.438rem;
+            /* largeur Figma mobile */
+            min-height: 67.125rem;
+            /* Figma (safe) */
+            padding: 1.5rem;
+        }
+        main {
+            padding: 1.5rem;
+        }
+        /* Tout en 1 colonne */
+        .grid-2,
+        .queryType .options {
+            grid-template-columns: 1fr;
+            gap: 1rem;
+        }
+        .field {
+            width: 100%;
+        }
+        .field-email,
+        .field-support {
+            height: var(--field-h);
+        }
     }
-    main {
-        padding: 1.5rem;
-    }
-    /* Tout en 1 colonne */
-    .grid-2,
-    .queryType .options {
-        grid-template-columns: 1fr;
-        gap: 1rem;
-    }
-    .field {
-        width: 100%;
-    }
-}

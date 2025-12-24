@@ -16,12 +16,12 @@
                 <h1>Contact Us</h1>
 
                 <div class="grid-2">
-                    <label for="firstName">
+                    <label>
             First Name *
             <input id="firstName" type="text" required />
           </label>
 
-                    <label for="lastName">
+                    <label>
             Last Name *
             <input id="lastName" type="text" required />
           </label>
@@ -35,20 +35,21 @@
                 </div>
 
                 <div class="queryType">
-                    <label>Query Type *</label>
+                    <p class="query-title">Query Type *</p>
 
                     <div class="options">
-                        <div class="field" style="--pad-left: 44px; --check-left: 12px;">
-                            <input name="queryType" id="q-email" type="radio" />
-                            <input type="text" value="General Enquiry" readonly />
-                        </div>
+                        <label class="field field-email">
+      <input type="radio" name="queryType" value="general-enquiry" required>
+      <span class="field-label">General Enquiry</span>
+    </label>
 
-                        <div class="field" style="--pad-left: 56px; --check-left: 20px;">
-                            <input name="queryType" id="q-phone" type="radio" required />
-                            <input type="text" value="Support Request" readonly />
-                        </div>
+                        <label class="field field-support">
+      <input type="radio" name="queryType" value="support-request">
+      <span class="field-label">Support Request</span>
+    </label>
                     </div>
                 </div>
+
 
                 <div class="textarea">
                     <label for="message">
