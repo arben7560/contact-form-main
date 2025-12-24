@@ -51,6 +51,9 @@ p {
     --white: hsl(0, 0%, 100%);
     --grey-500: hsl(186, 15%, 59%);
     --grey-900: hsl(187, 24%, 22%);
+    /* Controls */
+    --control-size: 24px;
+    --control-offset-x: 12px;
 }
 
 
@@ -195,11 +198,11 @@ button:focus {
 
 .field input[type="radio"] {
     position: absolute;
-    left: var(--check-left, 12px);
+    left: var(--check-left, var(--control-offset-x));
     top: calc(var(--pad-y) + (var(--field-h) / 2));
     transform: translateY(-50%);
-    width: 24px;
-    height: 24px;
+    width: var(--control-size);
+    height: var(--control-size);
     accent-color: var(--green-600);
     margin: 0;
     /* super utile */
@@ -261,11 +264,11 @@ button:hover {
    TABLET
    ========================= */
 
-@media (max-width: 768px) {
+@media (max-width: 48rem) {
     .card {
-        max-width: 690px;
+        max-width: 43.125rem;
         /* largeur Figma */
-        min-height: 800px;
+        min-height: 50rem;
         /* hauteur Figma */
         padding: 2rem;
         /* un peu plus compact */
@@ -289,12 +292,12 @@ button:hover {
    MOBILE (inclut iPhone 14 Pro Max = 430px)
    ========================= */
 
-@media (max-width: 480px) {
+@media (max-width: 30rem) {
     .card {
         width: 100%;
-        max-width: 343px;
+        max-width: 21.438rem;
         /* largeur Figma mobile */
-        min-height: 1074px;
+        min-height: 67.125rem;
         /* Figma (safe) */
         padding: 1.5rem;
     }
